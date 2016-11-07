@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<script src="js/jquery.js"></script>
+<script src="js/min/jquery-v1.10.2.min.js" type="text/javascript"></script>
+<script src="js/min/modernizr-custom-v2.7.1.min.js" type="text/javascript"></script>
+<script src="js/min/jquery-finger-v0.1.0.min.js" type="text/javascript"></script>
+<!--Include flickerplate-->
+<link href="css/flickerplate.css"  type="text/css" rel="stylesheet">
+<link href="css/base.css" rel="stylesheet" type="text/css">
+<link href="css/index.css" rel="stylesheet" type="text/css">
+<script src="js/min/flickerplate.min.js" type="text/javascript"></script>
+<script>
+	$(document).ready(function(){
+		$(".cut input").val("摄影...")
+	$(".cut input").focus(
+		function(){
+			$(this).val("")
+			}
+	)
+	$(".cut input").blur(
+		function(){
+			$(this).val("摄影...")
+			}
+	)
+	//banner
+		$('.flicker-example').flicker();
+	//mainnav
+	$(".mainnav li a").click(
+		function(){
+			$(this).addClass("mainnav_current")
+			}
+	)
+	//product
+	$(".pro_theme").hide()
+	$(".pro_theme").css({top:-500})
+	$(".pro").mouseenter(
+		function(){
+			$(this).children(".pro_theme").show()
+			$(this).children(".pro_theme").stop().animate({top:0},500)
+			
+		}
+	).mouseleave(
+		function(){
+			$(this).children(".pro_theme").stop().animate({top:-500},500)
+			}
+	)
+
+	$(".news_text").hide()
+	$(".news_box").mouseenter(
+		function(){
+			$(".news_text").css("z-index","5")
+			$(".news_text").stop(false,true).fadeIn(3000)
+		}
+	).mouseleave(
+		function(){
+			$(".news_text").stop(false,false).fadeOut(4000)
+			}
+	)
+	document.title=$(document).width()
+
+});
+</script>
+</head>
+
+<body>
+<!--页眉-->
+<div class="topnav">
+	<div class="logo"><a href="index.html"><img src="img/logo.png"></a></div>
+    <div class="cut">
+    	<input type="text" style=" width:163px; height:18px; border:1px solid #e6e6e6; border-radius:3px; background-image:url(img/search%202.png); background-repeat:no-repeat; background-position:center right; padding-left:5px; color:#999;">
+    </div>
+    <div class="clearfix"></div>                                                                                                
+</div>
+<div class="mainnav">
+	<ul>
+    	<li><a href="index.html">网站首页</a></li>
+        <li><a href="about.html">关于我们</a></li>
+        <li><a href="product.html">产品展示</a></li>
+        <li><a href="case.html">经典案例</a></li>
+        <li><a href="#">新闻资讯</a></li>
+        <li><a href="#">销售网络</a></li>
+        <li><a href="#">诚邀加盟</a></li>
+        <li><a href="#">联系我们</a></li>
+        <span></span>
+        <div class="clearfix"></div>
+    </ul>
+</div>
+<div class="flicker-example" data-block-text="false">
+  <ul>
+    <li data-background="img/banner_0.png">
+      <div class="flick-sub-text"><img src="img/banner_title.png"></div>
+    </li>
+    <li data-background="img/banner02.png">
+      <div class="flick-sub-text"><img src="img/banner_title02.png"></div>
+    </li>
+    <li data-background="img/banner03.jpg">
+      <div class="flick-sub-text"><img src="img/banner_title03.png"></div>
+    </li>
+  </ul>
+</div>
+
+<div class="pro_box">
+	<div class="pro_title">
+	<div><img src="img/pro_title.png"></div>
+    </div>
+    <div class="pro">
+        <img src="img/pro_01-1.png">
+        <div class="pro_theme">
+        	<div><img class="arrow_pro" src="img/arrow_deng.png"></div>
+            <h1>街角</h1>
+            <div class="pro_btn"><a href="product.html">MORE</a></div>
+        </div>
+    </div>
+    <div class="pro">
+        <img src="img/pro_02.png">
+        <div class="pro_theme">
+        	<div><img class="arrow_pro" src="img/arrow_deng.png"></div>
+            <h1>雨季</h1>
+            <div class="pro_btn"><a href="product.html">MORE</a></div>
+        </div>
+    </div>
+    <div class="pro">
+        <img src="img/pro_03.png">
+        <div class="pro_theme">
+        	<div><img class="arrow_pro" src="img/arrow_deng.png"></div>
+            <h1>等风来</h1>
+            <div class="pro_btn"><a href="product.html">MORE</a></div>
+        </div>
+    </div>
+    <div class="pro">
+        <img src="img/pro_04.png">
+        <div class="pro_theme">
+        	<div><img class="arrow_pro" src="img/arrow_deng.png"></div>
+            <h1>忆</h1>
+            <div class="pro_btn"><a href="product.html">MORE</a></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="news_box">
+	<img src="img/news_title.png">
+    <div class="news_pictures">
+    	<img class="news_black" src="img/news_black.png">
+        <img class="news_center" src="img/news_center.png">
+        <div class="news_text">
+        	<img src="img/news_bg_box.png">
+            <div>
+                <h1>在路上，t-one持续更新</h1>
+                <img class="line01" src="img/news_line.png">
+                <p>开帖晒花絮，分享这些珍贵的瞬间<br>谢谢每一位曾经、将要与t-one结缘的人<br>四季快乐！</p>
+                <img class="line02" src="img/news_line.png">
+                <a href="news.html">More</a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="phone_bg">
+	<img class="phone_left" src="img/phone_left.png">
+    <img class="phone_right" src="img/phone_right.png">
+	<div class="phone">
+    	<img src="img/phone.png">
+    </div>
+</div>
+
+<div class="next_box">
+	 <div class="next_left">
+     	<a href="index.html">
+            <div>RETURN TO TOP
+             <img src="img/page_left.png">
+            </div>
+        </a>
+     </div>
+     <div class="next_right">
+     	<a href="about.html">
+        	<div>NEXT PAGE
+                <img src="img/page_right.png">
+            </div>
+        </a>
+     </div>
+     <div class="clearfix"></div>
+</div>
+<div class="footer_bg">
+	<div class="footer_box">
+    	<div class="footer">
+            <div class="contact_img">
+                <h1><img src="img/footer_phone.png">4006-980-777</h1>
+                <h2><img src="img/mail.png">tone@163.com</h2>
+                <div class="clearfix"></div>
+            </div>
+            <div class="time">
+            	<img src="img/footer_s_lin.png">
+                <h1>工作时间：周一至周五9:00-18:00</h1>
+                <img src="img/footer_s_lin.png">
+                <div class="clearfix"></div>
+            </div>
+            <ul class="footer_nav">                                
+            	<li><a href="about.html">关于我们</a></li>
+                <li><a href="news.html">新闻资讯</a></li>
+                <li><a href="sale.html">销售网络</a></li>
+                <li><a href="join.html">诚邀加盟</a></li>
+                <li><a href="contact.html">联系我们</a></li>
+                <div class="clearfix"></div>
+            </ul>
+            <div class="footer_icon">
+            	<a href="http://t.sina.com.cn/"><div class="icon icon01"></div></a>
+                <a href="http://t.qq.com"><div class="icon icon02"></div></a>
+                <a href="https://wx.qq.com"><div class="icon icon03"></div></a>
+                <a href="about.html"><div class="icon icon04"></div></a>
+                <div class="clearfix"></div>
+            </div>
+            <div class="copyright">
+Rights Reserved.2008-2015&copy;犀牛云<br><br>粤ICP备09063742号－1
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
